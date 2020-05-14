@@ -3,7 +3,7 @@
 	<head>
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 		<title>Pictures - Aerial Media</title>
-		<link rel="favicon" href="/static/favicon.ico">
+		<link rel="icon" href="/static/favicon.ico">
 	</head>
 	<body>
 		<nav class="navbar sticky-top navbar-dark bg-dark">
@@ -21,7 +21,7 @@
 						<img src="{{'/static/pictures/' + picture}}" class="card-img-top"></img>
 						<div class="card-body">
 							<h5 class="card-title">{{picture}}</h5>
-							<a href="{{'/static/pictures/' + picture}}" class="btn btn-primary" style="width:100%">Let's Go!</a>
+							<a href="{{'/static/pictures/' + picture}}" class="btn btn-lg btn-primary" style="width:100%">Let's Go!</a>
 						</div>
 					</div>
 				{% endfor %}

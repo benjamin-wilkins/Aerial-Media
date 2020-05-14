@@ -3,6 +3,7 @@
 	<head>
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 		<title>Audio - Aerial Media</title>
+		<link rel="icon" href="/static/favicon.ico">
 	</head>
 	<body>
 		<nav class="navbar sticky-top navbar-dark bg-dark">
@@ -20,7 +21,7 @@
 						<audio src="{{'/static/audio/' + sound}}" class="card-img-top" controls>Sorry but your browser does not support Aerial Media Audio.</audio>
 						<div class="card-body">
 							<h5 class="card-title">{{sound}}</h5>
-							<a href="{{'/static/audio/' + sound}}" class="btn btn-primary" style="width:100%">Let's Go!</a>
+							<a href="{{'/static/audio/' + sound}}" class="btn btn-lg btn-primary" style="width:100%">Let's Go!</a>
 						</div>
 					</div>
 				{% endfor %}

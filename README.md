@@ -12,3 +12,7 @@ To Do:
  - [X] Add an upload button
  - [ ] Add a page for viewing induvidual media
  - [ ] Locally host Bootstrap.
+
+This project would not be possible were it not for:
+ * [Twitter Bootstrap] (https://www.getbootstrap.com)
+ * [Flask] (https://flask.palletsprojects.com/en/1.1.x/)

@@ -7,7 +7,23 @@
 	</head>
 	<body>
 		<nav class="navbar sticky-top navbar-dark bg-dark">
-			<a class="navbar-brand" href="#"><font class="h3">Aerial Media</font> - The self-hosted media centre</a>
+			<a class="navbar-brand" href="#"><h3>Aerial Media</h3></a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHidden" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarHidden">
+				<div class="navbar-nav">
+					<p class="nav-item text-light">
+						The self-hosted media centre
+						<div class="btn-group" role="group">
+							<a href="/videos" class="btn btn-light"><img src="/static/videos.svg"> Videos</a>
+							<a href="/pictures" class="btn btn-light"><img src="/static/pictures.svg"> Pictures</a>
+							<a href="/audio" class="btn btn-light"><img src="/static/audio.svg"> Audio</a>
+							<a href="#" class="btn btn-light"><img src="/static/home.svg"> Home</a>
+						</div>
+					</p>
+				</div>
+			</div>
 		</nav>
 		<div class="container">
 			<div class="row">
@@ -20,22 +36,100 @@
 					<a href="/videos" class="btn btn-outline-primary container-fluid"><img src="/static/videos.svg" class="card-img-top"></img></a>
 					<div class="card-body">
 						<h1 class="card-title">Videos</h1>
-						<a href="/videos" class="btn btn-lg btn-primary container-fluid">Let's go!</a>
+						<div class="btn-group-vertical container-fluid">
+							<a href="/videos" class="btn btn-lg btn-primary container-fluid">Let's go!</a>
+							<button type="button" class="btn btn-lg btn-secondary container-fluid" data-toggle="modal" data-target="#VideoUpload">Upload</button>
+						</div>
 					</div>
 				</div>
 				<div class="col-lg-4 card">
 					<a href="/pictures" class="btn btn-outline-primary container-fluid"><img src="/static/pictures.svg" class="card-img-top"></img></a>
 					<div class="card-body">
 						<h1 class="card-title">Pictures</h1>
-						<a href="/pictures" class="btn btn-lg btn-primary container-fluid">Let's go!</a>
+						<div class="btn-group-vertical container-fluid">
+							<a href="/pictures" class="btn btn-lg btn-primary container-fluid">Let's go!</a>
+							<button type="button" class="btn btn-lg btn-secondary container-fluid" data-toggle="modal" data-target="#PictureUpload">Upload</button>
+						</div>
 					</div>
 				</div>
 				<div class="col-lg-4 card">
 					<a href="/audio" class="btn btn-outline-primary container-fluid"><img src="/static/audio.svg" class="card-img-top"></img></a>
 					<div class="card-body">
 						<h1 class="card-title">Audio</h1>
-						<a href="/audio" class="btn btn-lg btn-primary container-fluid">Let's go!</a>
+						<div class="btn-group-vertical container-fluid">
+							<a href="/audio" class="btn btn-lg btn-primary container-fluid">Let's go!</a>
+							<button type="button" class="btn btn-lg btn-secondary container-fluid" data-toggle="modal" data-target="#AudioUpload">Upload</button>
+						</div>
 					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="VideoUpload" tabindex="-1" role="dialog" aria-labelledby="VideoUploadTitle" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="VideoUploadTitle">Upload Video</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<form method="POST" enctype="multipart/form-data" action="/videos/new">
+						<div class="modal-body">
+							<label for="VideoUploadButton">Upload a video...</label>
+							<input name="file" type="file" class="form-control-file btn btn-primary" id="VideoUploadButton" accept="video/*" required>
+							<p><strong>Note:</strong> Make sure there is a file extension (.mp4, .mov, .mpg etc.) as it is reguired to make the video play.</p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+							<button type="submit" class="btn btn-primary">Upload</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="PictureUpload" tabindex="-1" role="dialog" aria-labelledby="PictureUploadTitle" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="PictureUploadTitle">Upload Picture</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<form method="POST" enctype="multipart/form-data" action="/pictures/new">
+						<div class="modal-body">
+							<label for="PictureUploadButton">Upload a picture...</label>
+							<input name="file" type="file" class="form-control-file btn btn-primary" id="PictureUploadButton" accept="image/*" required>
+							<p><strong>Note:</strong> Make sure there is a file extension (.jpg, .svg, .ico etc.) as it is reguired to make the picture view.</p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+							<button type="submit" class="btn btn-primary">Upload</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="AudioUpload" tabindex="-1" role="dialog" aria-labelledby="AudioUploadTitle" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="AudioUploadTitle">Upload Audio</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<form method="POST" enctype="multipart/form-data" action="/audio/new">
+						<div class="modal-body">
+							<label for="AudioUploadButton">Upload audio...</label>
+							<input name="file" type="file" class="form-control-file btn btn-primary" id="AudioUploadButton" accept="audio/*" required>
+							<p><strong>Note:</strong> Make sure there is a file extension (.mp3, .wav, .ogg etc.) as it is reguired to make the audio play.</p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+							<button type="submit" class="btn btn-primary">Upload</button>
+						</div>
+					</form>
 				</div>
 			</div>
 		</div>

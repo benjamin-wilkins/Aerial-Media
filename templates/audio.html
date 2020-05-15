@@ -7,12 +7,28 @@
 	</head>
 	<body>
 		<nav class="navbar sticky-top navbar-dark bg-dark">
-			<a class="navbar-brand" href="/"><font class="h3">Aerial Media</font> - The self-hosted media centre</a>
+			<a class="navbar-brand" href="#"><h3>Aerial Media</h3></a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHidden" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarHidden">
+				<div class="navbar-nav">
+					<p class="nav-item text-light">
+						The self-hosted media centre
+						<div class="btn-group" role="group">
+							<a href="/videos" class="btn btn-light"><img src="/static/videos.svg"> Videos</a>
+							<a href="/pictures" class="btn btn-light"><img src="/static/pictures.svg"> Pictures</a>
+							<a href="#" class="btn btn-light"><img src="/static/audio.svg"> Audio</a>
+							<a href="/" class="btn btn-light"><img src="/static/home.svg"> Home</a>
+						</div>
+					</p>
+				</div>
+			</div>
 		</nav>
 		<div class="container">
 			<div class="row">
-				<div class="col" style="padding: 1.25em; text-align:center">
-					<h1>Welcome!</h1>
+				<div class="col" style="padding: 1.25em; text-align:right">
+					<button type="button" class="btn btn-outline-success rounded-pill" data-toggle="modal" data-target="#AudioUpload">+</button>
 				</div>
 			</div>
 			<div class="row">
@@ -25,6 +41,29 @@
 						</div>
 					</div>
 				{% endfor %}
+			</div>
+		</div>
+		<div class="modal fade" id="AudioUpload" tabindex="-1" role="dialog" aria-labelledby="AudioUploadTitle" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="AudioUploadTitle">Upload Audio</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<form method="POST" enctype="multipart/form-data" action="/audio/new">
+						<div class="modal-body">
+							<label for="AudioUploadButton">Upload audio...</label>
+							<input name="file" type="file" class="form-control-file btn btn-primary" id="AudioUploadButton" accept="audio/*" required>
+							<p><strong>Note:</strong> Make sure there is a file extension (.mp3, .wav, .ogg etc.) as it is reguired to make the audio play.</p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+							<button type="submit" class="btn btn-primary">Upload</button>
+						</div>
+					</form>
+				</div>
 			</div>
 		</div>
 		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

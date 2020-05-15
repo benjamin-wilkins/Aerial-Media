@@ -9,6 +9,6 @@ To add media, put it into the appropriate directory:
 
 To Do:
  - [X] Add Bootstrap styling
- - [ ] Add an upload button
- - [ ] Upgrade to next Bootstrap version
- - [ ] Locally host Bootstrap
+ - [X] Add an upload button
+ - [ ] Add a page for viewing induvidual media
+ - [ ] Locally host Bootstrap.

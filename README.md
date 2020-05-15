@@ -14,5 +14,5 @@ To Do:
  - [ ] Locally host Bootstrap.
 
 This project would not be possible were it not for:
- * [Twitter Bootstrap] (https://www.getbootstrap.com)
- * [Flask] (https://flask.palletsprojects.com/en/1.1.x/)
+ * [Twitter Bootstrap](https://www.getbootstrap.com)
+ * [Flask](https://flask.palletsprojects.com/en/1.1.x/)

@@ -48,5 +48,17 @@ def newaud():
     f.close()
     return redirect(url_for(audio))
 
+@app.route("/video/<video>")
+def vidplayer(video):
+    return render_template("video-player.html", video=video)
+
+@app.route("/picture/<picture>")
+def picplayer(picture):
+    return render_template("picture-player.html", picture=picture)
+
+@app.route("/sound/<audio>")
+def audplayer(audio):
+    return render_template("audio-player.html", audio=audio)
+
 if __name__ == "__main__":
     app.run(host="192.168.1.95", port=5000, debug=False)

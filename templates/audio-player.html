@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<title>{{audio}} - Aerial Media</title>
+		<link rel="icon" href="/static/favicon.ico">
+	</head>
+	<body>
+		<nav class="navbar sticky-top navbar-dark bg-dark">
+			<a class="navbar-brand" href="/"><h3>Aerial Media</h3></a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHidden" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarHidden">
+				<div class="navbar-nav">
+					<p class="nav-item text-light">
+						The self-hosted media centre
+						<div class="btn-group" role="group">
+							<a href="/videos" class="btn btn-light"><img src="/static/videos.svg"> Videos</a>
+							<a href="/pictures" class="btn btn-light"><img src="/static/pictures.svg"> Pictures</a>
+							<a href="/audio" class="btn btn-light"><img src="/static/audio.svg"> Audio</a>
+							<a href="/" class="btn btn-light"><img src="/static/home.svg"> Home</a>
+						</div>
+					</p>
+				</div>
+			</div>
+		</nav>
+		<div class="container">
+			<div class="row">
+				<div class="col" style="padding: 1.25em">
+					<a href="/audio" class="btn btn-outline-success rounded-pill" style="text-align:left">&lt;</a>
+					<h5 style="text-align:center">{{audio}}</h5>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col" style="padding: 1.25em">
+					<audio src="{{'/static/audio/' + audio}}" class="container-fluid" controls>Sorry but your browser does not support Aerial Media Audio.</audio>
+				</div>
+			</div>
+		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	</body>
+</html>

@@ -7,7 +7,7 @@
 	</head>
 	<body>
 		<nav class="navbar sticky-top navbar-dark bg-dark">
-			<a class="navbar-brand" href="#"><h3>Aerial Media</h3></a>
+			<a class="navbar-brand" href="/"><h3>Aerial Media</h3></a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHidden" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
@@ -37,7 +37,7 @@
 						<audio src="{{'/static/audio/' + sound}}" class="card-img-top" controls>Sorry but your browser does not support Aerial Media Audio.</audio>
 						<div class="card-body">
 							<h5 class="card-title">{{sound}}</h5>
-							<a href="{{'/static/audio/' + sound}}" class="btn btn-lg btn-primary" style="width:100%">Let's Go!</a>
+							<a href="{{'/sound/' + sound}}" class="btn btn-lg btn-primary" style="width:100%">Let's Go!</a>
 						</div>
 					</div>
 				{% endfor %}

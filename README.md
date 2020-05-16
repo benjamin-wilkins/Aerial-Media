@@ -11,7 +11,7 @@ To Do:
  - [X] Add Bootstrap styling
  - [X] Add an upload button
  - [X] Add a page for viewing induvidual media
- - [ ] Locally host Bootstrap.
+ - [X] Locally host Bootstrap.
 
 This project would not be possible were it not for:
  * [Twitter Bootstrap](https://www.getbootstrap.com)

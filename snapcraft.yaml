@@ -1,0 +1,19 @@
+name: aerial-media
+version: '1.0'
+summary: Self-hosted media site
+description: |
+  Aerial Media is a simple, self-hosted media site.
+confinement: devmode
+base: core18
+
+parts:
+  aerial-media:
+    plugin: python
+    python-version: python3
+    source: https://github.com/benjamin-wilkins/Aerial-Media.git
+    stage-packages:
+      - python3-flask
+
+apps:
+  aerial-media:
+    command: main.py

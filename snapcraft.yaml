@@ -16,4 +16,4 @@ parts:
 
 apps:
   aerial-media:
-    command: main.py
+    command: python3 main.py
